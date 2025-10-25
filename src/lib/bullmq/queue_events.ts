@@ -5,4 +5,6 @@ queueEvents.on("completed", ({ jobId, returnvalue, prev }, id) => {
   console.log({ id, jobId, completed: true, returnvalue, prev });
 });
 
-
+queueEvents.on("failed", ({ jobId, failedReason, prev }, id) => {
+  console.log({ id, jobId, failedReason, prev });
+});

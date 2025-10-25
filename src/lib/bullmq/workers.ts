@@ -2,10 +2,13 @@ import { Worker } from "bullmq";
 import { Redis } from "ioredis";
 
 const connection = new Redis({ maxRetriesPerRequest: null });
-const worker = new Worker<GreetData>(
+const worker = new Worker<GreetData, WorkerReturnType>(
   "greet",
   async (job) => {
+    // throw new Error("Couldn't complete job");
     console.log(`Hello ${job.data.name}`);
+
+    return "completed";
 
     // job.updateProgress()
   },
