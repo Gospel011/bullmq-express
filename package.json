@@ -23,6 +23,7 @@
   "homepage": "https://github.com/Gospel011/bullmq-express#readme",
   "dependencies": {
     "@types/node": "^24.9.1",
+    "bullmq": "^5.61.2",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "morgan": "^1.10.1"
