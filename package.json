@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Gospel011/bullmq-express#readme",
   "dependencies": {
+    "@bull-board/express": "^6.14.0",
     "@types/node": "^24.9.1",
     "bullmq": "^5.61.2",
     "dotenv": "^17.2.3",

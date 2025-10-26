@@ -8,7 +8,7 @@ const emailQueue = new Queue<EmailQueueData, WorkerReturnType>("send-email", {
   defaultJobOptions: {
     backoff: { type: "exponential", jitter: 0.5, delay: 5 * 1000 },
     attempts: 7,
-    removeOnComplete: true,
+    // removeOnComplete: true,
     // removeOnFail: {
     //   count: 10000,
     // },

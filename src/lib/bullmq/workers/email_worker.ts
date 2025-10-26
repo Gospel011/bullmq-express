@@ -7,7 +7,7 @@ const worker = new Worker<EmailQueueData, WorkerReturnType>(
   async (job) => {
     // console.log(`About to send email to ${job.data.email} (jobId: ${job.id})`);
     job.updateProgress(50);
-    await new Promise((resolve) => setTimeout(resolve, 0.5 * 1000));
+    await new Promise((resolve) => setTimeout(resolve, 10 * 1000));
     job.updateProgress(100);
     return "completed";
   },
