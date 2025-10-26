@@ -12,7 +12,7 @@ const worker = new Worker<GreetData, WorkerReturnType>(
 
     // job.updateProgress()
   },
-  { connection }
+  { connection, concurrency: 300 }
 );
 
 worker.on("error", (error) => {

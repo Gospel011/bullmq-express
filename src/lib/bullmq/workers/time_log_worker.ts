@@ -3,7 +3,7 @@ import { Redis } from "ioredis";
 const connection = new Redis({ maxRetriesPerRequest: null });
 
 const worker = new Worker<null, WorkerReturnType>(
-  "time_log",
+  "time-log",
   async (job, token) => {
     console.log({ jobId: job.name });
     const date = new Date();

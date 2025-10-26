@@ -1,6 +1,6 @@
 import { Queue } from "bullmq";
 
-const timeLogQueue = new Queue("time_log", {
+const timeLogQueue = new Queue("time-log", {
   connection: {
     host: "127.0.0.1",
     port: 6379,
