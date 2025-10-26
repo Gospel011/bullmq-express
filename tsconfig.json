@@ -43,7 +43,9 @@
     "baseUrl": "./src",
     "paths": {
       "@/lib/*": ["lib/*"],
-      "@/bullmq/*": ["lib/bullmq/*"]
+      "@/bullmq/*": ["lib/bullmq/*"],
+      "@/queues/*": ["lib/bullmq/queues/*"],
+      "@/workers/*": ["lib/bullmq/workers/*"]
     }
   }
 }
