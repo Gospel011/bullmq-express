@@ -2,8 +2,9 @@ interface GreetData {
   name: string;
 }
 
-// interface TimeLogData {
-//     startTime: new Date
-// }
+interface EmailQueueData {
+  email: string;
+  body: string;
+}
 
-type WorkerReturnType = 'completed' | 'failed'
+type WorkerReturnType = "completed" | "failed";

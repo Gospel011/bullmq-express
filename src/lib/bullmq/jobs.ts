@@ -1,23 +1,25 @@
-import timeLogQueue from "./queues/time_log_queue.js";
+// import timeLogQueue from "./queues/time_log_queue.js";
 
-const job = await timeLogQueue.upsertJobScheduler(
-  "log-time",
-  {
-    // pattern: "* * * * * *",
-    every: 1 * 1000,
-    limit: 5,
-  },
-  {
-    name: "log",
-    data: null,
-    opts: {
-      backoff: { type: "exponential", jitter: 0.5, delay: 5 },
-      attempts: 5,
-    },
-  }
+import emailQueue from "./queues/email_queue.js";
+
+console.log("adding jobs to queue");
+emailQueue.add(
+  "josh",
+  { email: "josh@gmail.com", body: "You've made 3 updates to your profile" },
+  { delay: 1 * 1000, jobId: "profileUpdate@josh@gmail.com" }
 );
-
-
-// console.log(await timeLogQueue.exportPrometheusMetrics())
-
-console.log(`JOB ID: ${job.id}`)
+emailQueue.add(
+  "josh",
+  { email: "josh@gmail.com", body: "You've made 7 updates to your profile" },
+  { delay: 1 * 1000, jobId: "profileUpdate@josh@gmail.com" }
+);
+emailQueue.add(
+  "josh",
+  { email: "josh@gmail.com", body: "You've made 10 updates to your profile" },
+  { delay: 1 * 1000, jobId: "profileUpdate@josh@gmail.com" }
+);
+emailQueue.add(
+  "josh",
+  { email: "josh@gmail.com", body: "You've made 20 updates to your profile" },
+  { delay: 1 * 1000, jobId: "profileUpdate@josh@gmail.com" }
+);
