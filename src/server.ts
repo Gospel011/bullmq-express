@@ -25,10 +25,12 @@ createBullBoard({
     new BullMQAdapter(timeLogQueue),
   ],
   serverAdapter,
-  options: { uiConfig: {} },
+  options: {
+    uiConfig: { boardTitle: "BullMQ Dashboard", menu: { width: "17rem" } },
+  },
 });
 
-app.use('/admin/queues', serverAdapter.getRouter())
+app.use("/admin/queues", serverAdapter.getRouter());
 
 app.listen(PORT, () => {
   console.log(`App is running on port ${PORT}`);
